@@ -1,7 +1,10 @@
 #!/bin/bash
 ROOT=../..
 cd ${ROOT}
+bash install.sh attributes/hyperflow.json
+bash install.sh attributes/hyperflow-ui.json
 
-# Set URLs to access RabbitMQ and Redis
-echo amqp://localhost:5672 > AMQP_URL
-echo redis://localhost:6379 > REDIS_URL
+curl -o /hyperflow-deployment/md_amqp.json https://raw.githubusercontent.com/dhoppe83/hyperflow-deployment/master/md_amqp.json
+
+echo amqp://$PUBLIC_RabbitMQ_Required_by_Master > AMQP_URL
+echo redis://$PUBLIC_Redis_Required_by_Master > REDIS_URL
