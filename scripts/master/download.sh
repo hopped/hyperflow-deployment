@@ -2,9 +2,6 @@
 
 cd $HOME
 
-### install dependencies
-apt-get -y install wget xz-utils
-
 ### nodejs, npm
 wget https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-x64.tar.xz
 
