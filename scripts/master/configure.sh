@@ -17,6 +17,6 @@ influx -execute 'CREATE DATABASE hyperflow'
 
 # grafana
 sed -i '/auth.anonymous/{n;n;s/false/true/}' /etc/grafana/grafana.ini
-mv conf/hyperflow-home.json /usr/share/grafana/public/dashboards/home.json
+cp conf/hyperflow-home.json /usr/share/grafana/public/dashboards/home.json
 sudo service grafana-server start
 curl -XPOST http://admin:admin@localhost:3000/api/datasources -H "Content-Type: application/json;charset=UTF-8" -d '{ "name": "hyperflow", "type": "influxdb", "access": "proxy", "url": "http://localhost:8086", "password": "root", "user": "root", "database": "hyperflow", "basicAuth": false, "basicAuthUser": "", "basicAuthPassword": "", "withCredentials": false, "isDefault": true }'
