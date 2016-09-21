@@ -9,4 +9,4 @@ export RABBITMQ_USER=guest
 export RABBITMQ_PASSWORD=guest
 export SERVER_NAME=HyperFlow
 
-cat config/hyperflowMonitoringPlugin.config.js | envsubst > /node_modules/hyperflow-monitoring-plugin/hyperflowMonitoringPlugin.config.js
+cat conf/hyperflowMonitoringPlugin.config.js | envsubst > /node_modules/hyperflow-monitoring-plugin/hyperflowMonitoringPlugin.config.js
