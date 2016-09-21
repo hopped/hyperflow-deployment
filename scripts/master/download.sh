@@ -3,7 +3,6 @@
 cd $HOME
 
 ### install dependencies
-apt-get update
 apt-get -y install wget xz-utils
 
 ### nodejs, npm
