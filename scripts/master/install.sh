@@ -13,6 +13,5 @@ npm install https://github.com/dice-cyfronet/hyperflow-monitoring-plugin/archive
 mkdir /hyperflow-ui
 cd $HOME && tar zxv --no-same-owner --no-same-permissions -f hyperflow-ui.tar.gz -C /hyperflow-ui
 
-### influxdb
-sudo apt-get update
-sudo apt-get install influxdb
+### influxdb, grafana
+sudo apt-get install influxdb grafana
