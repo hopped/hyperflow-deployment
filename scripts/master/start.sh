@@ -6,6 +6,7 @@ S3_PATH=$4
 
 # influxdb
 sudo service influxdb start
+influx -execute 'CREATE DATABASE hyperflow'
 
 # grafana
 sudo service grafana-server start
