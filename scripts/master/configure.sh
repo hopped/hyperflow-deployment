@@ -15,6 +15,8 @@ cat conf/hyperflowMonitoringPlugin.config.js | envsubst > /node_modules/hyperflo
 sudo service influxdb start
 influx -execute 'CREATE DATABASE hyperflow'
 
+while ! echo exit | nc localhost 3000; do sleep 1; done
+
 # grafana
 sed -i '/auth.anonymous/{n;n;s/false/true/}' /etc/grafana/grafana.ini
 cp conf/hyperflow-home.json /usr/share/grafana/public/dashboards/home.json
