@@ -8,7 +8,6 @@ tar -C /usr/local --strip-components 1 -xJf node-v4.5.0-linux-x64.tar.xz
 cd /
 npm install https://github.com/hopped/hyperflow/archive/develop.tar.gz
 npm install https://github.com/dice-cyfronet/hyperflow-monitoring-plugin/archive/master.tar.gz
-cp /hyperflow-deployment/cookbooks/workflows/templates/default/hyperflowMonitoringPlugin.config.js.erb /node_modules/hyperflow-monitoring-plugin/hyperflowMonitoringPlugin.config.js
 
 ### hyperflow-ui
 mkdir /hyperflow-ui
