@@ -14,4 +14,4 @@ mkdir /hyperflow-ui
 cd $HOME && tar zxv --no-same-owner --no-same-permissions -f hyperflow-ui.tar.gz -C /hyperflow-ui
 
 ### influxdb, grafana
-sudo apt-get install influxdb grafana
+sudo apt-get install -y influxdb grafana
