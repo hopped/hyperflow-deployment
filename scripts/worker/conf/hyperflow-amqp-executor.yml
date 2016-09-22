@@ -1,0 +1,15 @@
+# RabbitMQ URL, defaults to ENV['AMQP_URL']
+amqp_url: $AMQP_URL
+
+# Execution storage scenario: cloud | nfs | local 
+storage: $STORAGE
+
+# Number of execution threads
+threads: $(nproc)
+
+# Cloud storage settings
+cloud_storage:
+  :provider:                 AWS
+  :region:                   $AWS_REGION
+  :aws_access_key_id:        $AWS_ACCESS_KEY_ID
+  :aws_secret_access_key:    $AWS_SECRET_ACCESS_KEY
