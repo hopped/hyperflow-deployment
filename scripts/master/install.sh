@@ -28,7 +28,7 @@ export RABBITMQ_USER=guest
 export RABBITMQ_PASSWORD=guest
 export SERVER_NAME=HyperFlow
 
-cd /hyperflow-deployment && cat conf/hyperflowMonitoringPlugin.config.js | envsubst > /node_modules/hyperflow-monitoring-plugin/hyperflowMonitoringPlugin.config.js
+cd /hyperflow-deployment/scripts/worker && cat conf/hyperflowMonitoringPlugin.config.js | envsubst > /node_modules/hyperflow-monitoring-plugin/hyperflowMonitoringPlugin.config.js
 
 ### influxdb, grafana
 sudo apt-get update
