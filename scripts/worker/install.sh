@@ -4,7 +4,7 @@ echo "START:install.sh"
 echo "ENV:RabbitMQ " $PUBLIC_RabbitMQ_Required_By_Worker
 echo amqp://$PUBLIC_RabbitMQ_Required_By_Worker > $HOME/AMQP_URL
 
-sudo apt-get install -y mencoder libgomp1 build-essential libxml2-dev zlib1g-dev
+sudo apt-get install -y mencoder libgomp1 build-essential libxml2-dev zlib1g-dev gettext-base
 
 cd $HOME
 
