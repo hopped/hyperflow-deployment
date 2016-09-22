@@ -1,5 +1,5 @@
 # RabbitMQ URL, defaults to ENV['AMQP_URL']
-amqp_url: amqp://$AMQP_URL
+amqp_url: $AMQP_URL
 
 # Execution storage scenario: cloud | nfs | local 
 storage: $STORAGE
