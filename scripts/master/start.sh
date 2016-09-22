@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "START:start.sh"
+
 WORKDIR=$1
 S3_REGION=$2
 S3_BUCKET=$3
