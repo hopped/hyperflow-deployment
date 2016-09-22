@@ -5,7 +5,7 @@ amqp_url: $AMQP_URL
 storage: $STORAGE
 
 # Number of execution threads
-threads: $(nproc)
+threads: $THREADS
 
 # Cloud storage settings
 cloud_storage:
