@@ -1,11 +1,11 @@
 #!/bin/bash
 echo "START: install.sh"
 
-echo "ENV:RabbitMQ " $PUBLIC_RabbitMQ_Required_by_Master
-echo "ENV:Redis " $PUBLIC_Redis_Required_by_Master
+echo "ENV:RabbitMQ " $PUBLIC_RabbitMQ_Required_By_Hyperflow
+echo "ENV:Redis " $PUBLIC_Redis_Required_By_Hyperflow
 
-echo amqp://$PUBLIC_RabbitMQ_Required_by_Master > $HOME/AMQP_URL
-echo redis://$PUBLIC_Redis_Required_by_Master > $HOME/REDIS_URL
+echo amqp://$PUBLIC_RabbitMQ_Required_By_Hyperflow > $HOME/AMQP_URL
+echo redis://$PUBLIC_Redis_Required_By_Hyperflow > $HOME/REDIS_URL
 
 ### nodejs, npm
 cd $HOME
