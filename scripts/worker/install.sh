@@ -4,21 +4,21 @@ echo "START:install.sh"
 echo "ENV:RabbitMQ " $PUBLIC_RabbitMQ_Required_By_Worker
 echo amqp://$PUBLIC_RabbitMQ_Required_By_Worker > $HOME/AMQP_URL
 
-sudo apt-get install -y mencoder libgomp1 build-essential libxml2-dev zlib1g-dev gettext-base
-
-cd $HOME
+### extra dependencies for amqp-executor mainly
+sudo apt-get install -y mencoder libgomp1 build-essential libxml2-dev zlib1g-dev gettext-base mpich
 
 ### povray
+cd $HOME
 tar xvfz povlinux-3.6.tgz
 cd povray-3.6 && ./install -no-arch-check
 
 ### md simulation
-cd /hyperflow-deployment/binaries && tar xvfz md_v4_omp.tgz
-mv /hyperflow-deployment/binaries/MD_v4_OMP /
-
 cd $HOME
+unzip master.zip && mv molecular-dynamics-simulation-release /MD_v4_MPI
+cd /MD_v4_MPI/src && make TARGET=RELEASE MPI=1 ARCH=CPU COMPILER=mpi -j4 && cp CMD_CPU ../main
 
 ### ruby, mime-types, amqp-executor
+cd $HOME
 tar -C /usr/local -xzf ruby-2.1.4.tgz
 gem install --no-ri --no-rdoc mime-types
 gem install --no-ri --no-rdoc hyperflow-amqp-executor
