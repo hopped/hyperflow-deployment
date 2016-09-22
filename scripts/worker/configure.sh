@@ -2,6 +2,7 @@
 echo "START:configure.sh"
 
 export AMQP_URL=$(cat $HOME/AMQP_URL)
+export THREADS=$(nproc)
 export STORAGE=cloud
 export AWS_REGION=$1
 export AWS_ACCESS_KEY_ID=$2
