@@ -15,7 +15,7 @@ cd povray-3.6 && ./install -no-arch-check
 ### md simulation
 cd $HOME
 unzip master.zip && mv molecular-dynamics-simulation-master /MD_v4_MPI
-cd /MD_v4_MPI/src && make TARGET=RELEASE MPI=1 ARCH=CPU COMPILER=mpi -j4 && cp CMD_CPU ../main
+cd /MD_v4_MPI/src && make TARGET=RELEASE MPI=1 ARCH=CPU COMPILER=mpi -j4 && cp CMD_CPU ../main && mv CMD_CPU main
 
 ### ruby, mime-types, amqp-executor
 cd $HOME
