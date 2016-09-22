@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "START:download.sh"
 
 cd $HOME
 
@@ -16,3 +17,5 @@ echo "deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stabl
 ### grafana
 echo "deb https://packagecloud.io/grafana/stable/debian/ wheezy main" | sudo tee /etc/apt/sources.list.d/grafana.list
 curl https://packagecloud.io/gpg.key | sudo apt-key add -
+
+echo "END:download.sh"
