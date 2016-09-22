@@ -20,7 +20,7 @@ cd $HOME
 
 ### ruby, mime-types, amqp-executor
 tar -C /usr/local -xzf ruby-2.1.4.tgz
-gem install mime-types
+gem install --no-ri --no-rdoc mime-types
 gem install --no-ri --no-rdoc hyperflow-amqp-executor
 
 echo "END:install.sh"
