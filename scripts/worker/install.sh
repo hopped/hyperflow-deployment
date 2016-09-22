@@ -19,7 +19,7 @@ cd /MD_v4_MPI/src && make TARGET=RELEASE MPI=1 ARCH=CPU COMPILER=mpi -j4 && cp C
 
 ### ruby, mime-types, amqp-executor
 cd $HOME
-JOBS=$($(nproc)-1)
+JOBS=$[$(nproc)-1]
 tar -C /usr/local -xzf ruby-2.1.4.tgz
 gem install bundle
 bundle config --global jobs $JOBS
