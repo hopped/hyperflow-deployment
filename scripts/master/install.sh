@@ -27,7 +27,8 @@ export AMQP_URL=$(cat $HOME/AMQP_URL)
 export RABBITMQ_USER=guest
 export RABBITMQ_PASSWORD=guest
 export SERVER_NAME=HyperFlow
-cat conf/hyperflowMonitoringPlugin.config.js | envsubst > /node_modules/hyperflow-monitoring-plugin/hyperflowMonitoringPlugin.config.js
+
+cd $HOME/hyperflow-deployment && cat conf/hyperflowMonitoringPlugin.config.js | envsubst > /node_modules/hyperflow-monitoring-plugin/hyperflowMonitoringPlugin.config.js
 
 ### influxdb, grafana
 sudo apt-get update
