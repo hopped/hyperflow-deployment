@@ -1,11 +1,8 @@
 #!/bin/bash
 echo "START:install.sh"
 
-echo "ENV:RabbitMQ " $PUBLIC_RabbitMQ_Required_By_Hyperflow
-echo "ENV:Redis " $PUBLIC_Redis_Required_By_Hyperflow
-
-echo amqp://$PUBLIC_RabbitMQ_Required_By_Hyperflow > $HOME/AMQP_URL
-echo redis://$PUBLIC_Redis_Required_By_Hyperflow > $HOME/REDIS_URL
+echo "ENV:RabbitMQ " $PUBLIC_RabbitMQ_Required_By_Worker
+echo amqp://$PUBLIC_RabbitMQ_Required_By_Worker > $HOME/AMQP_URL
 
 cd $HOME
 
