@@ -13,8 +13,10 @@ tar xvfz povlinux-3.6.tgz
 cd povray-3.6 && ./install -no-arch-check
 
 ### md simulation
-cd $HOME/hyperflow-deployment/binaries && tar xvfz md_v4_omp.tgz
-mv $HOME/hyperflow-deployment/binaries/MD_v4_OMP /
+cd /hyperflow-deployment/binaries && tar xvfz md_v4_omp.tgz
+mv /hyperflow-deployment/binaries/MD_v4_OMP /
+
+cd $HOME
 
 ### ruby, mime-types, amqp-executor
 tar -C /usr/local -xzf ruby-2.1.4.tgz
