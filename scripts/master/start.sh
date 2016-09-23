@@ -9,7 +9,8 @@ S3_PATH=$4
 # Start HyperFlow as a server
 nohup env PORT=51404 WORKDIR=${WORKDIR} S3_BUCKET=${S3_BUCKET} S3_PATH=${S3_PATH} AMQP_URL=$(cat $HOME/AMQP_URL) REDIS_URL=$(cat $HOME/REDIS_URL) /node_modules/hyperflow/bin/hflow start-server -p hyperflow-monitoring-plugin &
 
-# Run UI on port 80
+# Run UI on port 51483
+export REDIS_IP=$(cat $HOME/REDIS_URL)
 export AWS_S3_REGION=${S3_REGION}
 export AWS_S3_BUCKET=${S3_BUCKET}
 export AWS_S3_PATH=${S3_PATH}
