@@ -1,8 +1,0 @@
-{
-  "paasage_services": { "enable": false},
-  "run_list": [ 
-    "recipe[apt]", 
-    "recipe[workflows::redis]"   
-  ]
-}
-

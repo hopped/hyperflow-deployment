@@ -1,9 +1,0 @@
-{
-  "amqp_executor": {
-    "AMQP_URL": "amqp://localhost",
-    "STORAGE": "local"
-  },
-  "run_list": [ 
-    "recipe[workflows::amqp-executor-template]"
-  ]
-}
