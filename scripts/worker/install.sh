@@ -10,7 +10,7 @@ sudo apt-get install -y mencoder gettext-base mpich bc
 
 ### povray
 cd $HOME
-tar -xfz povlinux-3.6.tgz
+tar -xzf povlinux-3.6.tgz
 cd povray-3.6 && ./install -no-arch-check
 
 ### md simulation
