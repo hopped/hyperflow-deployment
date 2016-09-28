@@ -9,13 +9,12 @@ sudo apt-get install -y mencoder libgomp1 build-essential libxml2-dev zlib1g-dev
 
 ### povray
 cd $HOME
-tar xfz povlinux-3.6.tgz
+tar -xfz povlinux-3.6.tgz
 cd povray-3.6 && ./install -no-arch-check
 
 ### md simulation
-cd $HOME
-unzip master.zip && mv molecular-dynamics-simulation-master /MD_v4_MPI
-cd /MD_v4_MPI/src && make TARGET=RELEASE MPI=1 ARCH=CPU COMPILER=mpi -j4 && cp CMD_CPU ../main && mv CMD_CPU main
+cd /hyperflow-deployment/binaries
+tar -C / -xf md_v4_mpi.tar.gz
 
 ### ruby, mime-types, amqp-executor
 cd $HOME
