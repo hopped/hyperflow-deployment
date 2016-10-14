@@ -1,6 +1,15 @@
 #!/bin/bash
 echo "START:download.sh"
 
-sleep 1
+cd $HOME
+
+### povray
+wget http://gd.tuwien.ac.at/graphics/raytracing/povray/Official/Linux/povlinux-3.6.tgz
+
+### ruby
+wget https://s3.amazonaws.com/pkgr-buildpack-ruby/current/ubuntu-14.04/ruby-2.1.4.tgz
+
+### hyperflow-amqp-executor
+wget https://dl.dropboxusercontent.com/u/81819/executor.tar.gz
 
 echo "END:download.sh"
