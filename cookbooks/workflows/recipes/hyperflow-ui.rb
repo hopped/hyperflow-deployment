@@ -1,4 +1,4 @@
-version = "0.2"
+version = "0.3"
 tarball = "hyperflow-ui.tar.gz"
 target = "hyperflow-ui"
 
