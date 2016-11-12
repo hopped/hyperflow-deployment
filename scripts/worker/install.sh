@@ -12,10 +12,6 @@ cd $HOME
 tar -xzf povlinux-3.6.tgz
 cd povray-3.6 && ./install -no-arch-check
 
-### md simulation
-cd /hyperflow-deployment/binaries
-tar -C / -xf md_v4_mpi.tar.gz
-
 ### ruby, mime-types, amqp-executor
 cd $HOME
 JOBS=$[$(nproc)-1]
