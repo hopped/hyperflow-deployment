@@ -13,4 +13,8 @@ exportfs -a
 
 rpcbind
 
+### md simulation
+cd ../../binaries
+tar -C /opt/shared/ -xf md_v4_mpi.tar.gz
+
 echo "END:configure.sh"
