@@ -5,7 +5,7 @@ echo "START:install.sh"
 apt-get install -y nfs-kernel-server nfs-common
 
 ### md simulation
-cd ./hyperflow-deployment/binaries
+cd ../../binaries
 tar -C /opt/shared/ -xf md_v4_mpi.tar.gz
 
 echo "END:install.sh"
