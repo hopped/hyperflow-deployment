@@ -4,8 +4,9 @@
 VISOR_HOST=$(ip route show | awk '/default/ {print $3}')
 
 ### LOCATE PORT OF TELNET SERVER
-PORTS=( $(curl -s $VISOR_HOST:31415/monitors | jq '.[] | select(.port != null) | .port') )
-VISOR_PORT=${PORTS[0]}
+#PORTS=( $(curl -s $VISOR_HOST:31415/monitors | jq '.[] | select(.port != null) | .port') )
+#VISOR_PORT=${PORTS[0]}
+VISOR_PORT=49152
 
 echo "Waiting for visor telnet to launch on $VISOR_HOST:$VISOR_PORT"
 while ! nc -zv $VISOR_HOST $VISOR_PORT; do   
