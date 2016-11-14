@@ -5,7 +5,7 @@ echo "ENV:RabbitMQ " $PUBLIC_RabbitMQ_Required_by_Worker
 echo amqp://$PUBLIC_RabbitMQ_Required_by_Worker > $HOME/AMQP_URL
 
 ### extra dependencies for amqp-executor mainly
-sudo apt-get install -y mencoder libgomp1 build-essential libxml2-dev zlib1g-dev gettext-base mpich bc nfs-common
+sudo apt-get install -y mencoder libgomp1 build-essential libxml2-dev zlib1g-dev gettext-base mpich bc
 
 ### povray
 cd $HOME
