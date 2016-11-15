@@ -13,11 +13,6 @@ cd $HOME
 tar -xzf povlinux-3.6.tgz
 cd povray-3.6 && ./install -no-arch-check
 
-### nfs client
-mkdir /opt/shared
-chmod -R 777 /opt/shared
-mount -t nfs4 "$PUBLIC_NFSServer_Required_by_Worker":/opt/shared /opt/shared
-
 ### ruby, mime-types, amqp-executor
 cd $HOME
 JOBS=$[$(nproc)-1]
