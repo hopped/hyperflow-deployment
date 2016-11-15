@@ -15,6 +15,6 @@ rpcbind
 
 ### md simulation
 cd ../../binaries
-tar -C /opt/shared/ -xf md_v4_mpi.tar.gz
+tar -C /opt/shared/ -xf md_v4_mpi_trusty.tar.gz
 
 echo "END:configure.sh"
