@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "START:install.sh"
 
-echo "ENV:RabbitMQ " $PUBLIC_RabbitMQ_Required_by_Worker
-echo "ENV:NFS " $PUBLIC_NFSServer_Required_by_Worker
+echo "ENV:RabbitMQ $PUBLIC_RabbitMQ_Required_by_Worker"
+echo "ENV:NFS $PUBLIC_NFSServer_Required_by_Worker"
 echo amqp://$PUBLIC_RabbitMQ_Required_by_Worker > $HOME/AMQP_URL
 
 ### extra dependencies for amqp-executor mainly
