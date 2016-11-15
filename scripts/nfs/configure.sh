@@ -19,7 +19,6 @@ cd ../../binaries && tar -C /opt/shared/ -xf md_v4_mpi_trusty.tar.gz
 ## ssh
 ssh-keygen -t rsa -f $HOME/.ssh/id_rsa -N ''
 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
-chown ubuntu:ubuntu -R $HOME/.ssh
 
 ## modify ssh config
 echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config  
