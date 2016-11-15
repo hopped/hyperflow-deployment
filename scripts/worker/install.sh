@@ -9,7 +9,6 @@ echo amqp://$PUBLIC_RabbitMQ_Required_by_Worker > $HOME/AMQP_URL
 sudo apt-get install -y mencoder libgomp1 build-essential libxml2-dev zlib1g-dev gettext-base mpich bc nfs-common
 
 ### povray
-cd $HOME
 tar -xzf povlinux-3.6.tgz
 cd povray-3.6 && ./install -no-arch-check
 
