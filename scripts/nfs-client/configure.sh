@@ -13,6 +13,6 @@ echo "NFS host: " $NFS_IP
 mkdir /opt/shared
 chown -R 777 /opt/shared
 rpcbind
-mount -t nfs4 $NFS_IP:/opt/shared /opt/shared
+mount -t nfs4 "$NFS_IP":/opt/shared /opt/shared
 
 echo "END:configure.sh"
