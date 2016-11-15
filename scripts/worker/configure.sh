@@ -8,7 +8,11 @@ export AWS_REGION=$1
 export AWS_ACCESS_KEY_ID=$2
 export AWS_SECRET_ACCESS_KEY=$3
 
+# update yml configuration of amqp-executor
 cat conf/hyperflow-amqp-executor.yml | envsubst > /etc/hyperflow-amqp-executor.yml
+
+# overwrite existing metric collector with new version
+mv conf/hyperflow-amqp-metric-collector /usr/local/lib/ruby/gems/2.1.0/gems/hyperflow-amqp-executor-1.0.1/bin/
 
 # nfs ip (remove port)
 NFS_IP=$PUBLIC_NFSServer_Required_by_Worker
