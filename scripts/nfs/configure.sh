@@ -24,6 +24,9 @@ cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config  
 echo "    UserKnownHostsFile /dev/null" | sudo tee -a /etc/ssh/ssh_config
 
+## copy into shared folder
+cp -r $HOME/.ssh /opt/shared
+
 service ssh restart
 
 echo "END:configure.sh"
