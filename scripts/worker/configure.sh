@@ -26,4 +26,9 @@ chown -R 777 /opt/shared
 rpcbind
 mount -t nfs4 "$NFS_IP":/opt/shared /opt/shared
 
+# ssh configuration
+echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config  
+echo "    UserKnownHostsFile /dev/null" | sudo tee -a /etc/ssh/ssh_config
+cp /opt/shared/.ssh/* $HOME/.ssh
+
 echo "END:configure.sh"
