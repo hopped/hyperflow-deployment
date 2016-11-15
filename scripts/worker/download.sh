@@ -1,6 +1,8 @@
 #!/bin/bash
 echo "START:download.sh"
 
+cd $HOME
+
 ### povray
 wget -q http://gd.tuwien.ac.at/graphics/raytracing/povray/Official/Linux/povlinux-3.6.tgz
 
