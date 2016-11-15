@@ -31,8 +31,8 @@ mount -t nfs4 "$NFS_IP":/opt/shared /opt/shared
 # ssh configuration
 echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config  
 echo "    UserKnownHostsFile /dev/null" | sudo tee -a /etc/ssh/ssh_config
-#cp /opt/shared/.ssh/* $HOME/.ssh
-#chown ubuntu:ubuntu -R $HOME/.ssh
+cp /opt/shared/.ssh/* $HOME/.ssh
+chown ubuntu:ubuntu -R $HOME/.ssh
 
 service ssh restart
 
