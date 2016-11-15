@@ -2,6 +2,6 @@
 echo "START:install.sh"
 
 # install dependencies
-apt-get install -y nfs-kernel-server nfs-common
+apt-get install -y nfs-kernel-server openssh-server nfs-common
 
 echo "END:install.sh"
