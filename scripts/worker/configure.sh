@@ -1,6 +1,8 @@
 #!/bin/bash
 echo "START:configure.sh"
 
+echo "NFS Server: PUBLIC_NFSServer_Required_by_Worker"
+
 export AMQP_URL=$(cat $HOME/AMQP_URL)
 export THREADS=$(nproc)
 export STORAGE=cloud
