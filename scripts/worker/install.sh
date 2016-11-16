@@ -6,7 +6,7 @@ echo "ENV:NFS $PUBLIC_NFSServer_Required_by_Worker"
 echo amqp://$PUBLIC_RabbitMQ_Required_by_Worker > $HOME/AMQP_URL
 
 ### extra dependencies for amqp-executor mainly
-sudo apt-get install -y mencoder gettext-base mpich bc openssh-server nfs-common jq libgomp1 build-essential libxml2-dev zlib1g-dev
+sudo apt-get install -y mencoder gettext-base mpich bc openssh-server nfs-common jq libgomp1 build-essential libxml2-dev zlib1g-dev openmpi-bin libopenmpi-dev
 
 ### povray
 cd $HOME
