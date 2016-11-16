@@ -5,5 +5,4 @@ echo "START:start.sh"
 bash start-monitoring.sh > start-monitoring.log 2>&1 &
 
 # start the job executor
-cd /hyperflow-amqp-executor
-env AMQP_URL=$(cat $HOME/AMQP_URL) bundle exec bin/hyperflow-amqp-executor /etc/hyperflow-amqp-executor.yml > amqp.log 2>&1 &
+env AMQP_URL=$(cat $HOME/AMQP_URL) hyperflow-amqp-executor /etc/hyperflow-amqp-executor.yml > amqp.log 2>&1 &
