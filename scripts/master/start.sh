@@ -14,4 +14,4 @@ export REDIS_ACCESS=$(cat $HOME/REDIS_SHORT_URL)
 export AWS_S3_REGION=${S3_REGION}
 export AWS_S3_BUCKET=${S3_BUCKET}
 export AWS_S3_PATH=${S3_PATH}
-nohup /hyperflow-ui/run.sh &
+nohup /hyperflow-ui/run.sh > ui.log 2>&1 &
