@@ -9,7 +9,7 @@ VISOR_HOST=$(ip route show | awk '/default/ {print $3}')
 VISOR_PORT=49152
 
 echo "Waiting for visor telnet to launch on $VISOR_HOST:$VISOR_PORT"
-while ! nc -z $VISOR_HOST $VISOR_PORT; do   
+while ! nc -zv $VISOR_HOST $VISOR_PORT; do   
   sleep 5
 done
 
