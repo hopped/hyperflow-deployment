@@ -6,7 +6,7 @@ echo "ENV:NFS $PUBLIC_NFSServer_Required_by_Worker"
 echo amqp://$PUBLIC_RabbitMQ_Required_by_Worker > $HOME/AMQP_URL
 
 ### extra dependencies for amqp-executor mainly
-sudo apt-get install -y mencoder gettext-base mpich bc openssh-server nfs-common jq
+sudo apt-get install -y mencoder gettext-base mpich bc openssh-server nfs-common jq libgomp1 build-essential libxml2-dev zlib1g-dev
 
 ### povray
 cd $HOME
@@ -15,8 +15,11 @@ cd povray-3.6 && ./install -no-arch-check
 
 ### ruby, mime-types, amqp-executor
 cd $HOME
+JOBS=$[$(nproc)-1]
 tar -C /usr/local -xzf ruby-2.1.4.tgz
-tar -C / -xf executor.tar.gz
-gem install --no-ri --no-rdoc bundler
+gem install bundle
+bundle config --global jobs $JOBS
+gem install --no-ri --no-rdoc mime-types
+gem install --no-ri --no-rdoc hyperflow-amqp-executor
 
 echo "END:install.sh"
