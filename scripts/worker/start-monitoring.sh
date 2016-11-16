@@ -14,4 +14,4 @@ while ! nc -z $VISOR_HOST $VISOR_PORT; do
 done
 
 echo "Starting metric collector..."
-env AMQP_URL=$(cat $HOME/AMQP_URL) VISOR_HOST=$VISOR_HOST VISOR_PORT=$VISOR_PORT hyperflow-amqp-metric-collector &
+env AMQP_URL=$(cat $HOME/AMQP_URL) VISOR_HOST=$VISOR_HOST VISOR_PORT=$VISOR_PORT hyperflow-amqp-metric-collector > metrics.log 2>&1 &
