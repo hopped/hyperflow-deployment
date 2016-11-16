@@ -30,7 +30,7 @@ rpcbind
 mount -t nfs4 "$NFS_IP":/opt/shared /opt/shared
 
 # add update check into run-cmd.sh
-sed -i '56i $(curl -sS -u guest:guest "http://'$RabbitMQMgtPort_Required_by_Worker'/api/consumers" | jq --raw-output .[].channel_details.peer_host > /opt/shared/MD_v4_MPI/hostfile.txt)'
+sed -i '56i $(curl -sS -u guest:guest "http://'$RabbitMQMgtPort_Required_by_Worker'/api/consumers" | jq --raw-output .[].channel_details.peer_host > /opt/shared/MD_v4_MPI/hostfile.txt)' /opt/shared/MD_v4_MPI/run-cmd.sh
 
 # ssh configuration
 echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config  
