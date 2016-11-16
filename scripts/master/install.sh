@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "START: install.sh"
 
-BASE_DIR="$PWD/../../"
+BASE_DIR=$PWD
 
 echo "ENV:RabbitMQ=$PUBLIC_RabbitMQ_Required_By_Hyperflow"
 echo "ENV:Redis=$PUBLIC_Redis_Required_By_Hyperflow"
@@ -32,7 +32,7 @@ export RABBITMQ_USER=guest
 export RABBITMQ_PASSWORD=guest
 export SERVER_NAME=HyperFlow
 
-cd $BASE_DIR && cd ./hyperflow-deployment/scripts/master && cat conf/hyperflowMonitoringPlugin.config.js | envsubst > /node_modules/hyperflow-monitoring-plugin/hyperflowMonitoringPlugin.config.js
+cd $BASE_DIR && cat conf/hyperflowMonitoringPlugin.config.js | envsubst > /node_modules/hyperflow-monitoring-plugin/hyperflowMonitoringPlugin.config.js
 
 ### influxdb, grafana
 sudo apt-get update
