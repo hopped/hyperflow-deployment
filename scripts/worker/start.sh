@@ -2,7 +2,7 @@
 echo "START:start.sh"
 
 # start monitoring of hyperflow jobs in the background
-bash start-monitoring.sh &
+bash start-monitoring.sh > start-monitoring.log 2>&1 &
 
 # start the job executor
 cd /hyperflow-amqp-executor
