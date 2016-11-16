@@ -17,9 +17,6 @@ cat conf/hyperflow-amqp-executor.yml | envsubst > /etc/hyperflow-amqp-executor.y
 # overwrite existing metric collector with new version
 mv conf/hyperflow-amqp-metric-collector /usr/local/lib/ruby/gems/2.1.0/gems/hyperflow-amqp-executor-1.0.1/bin/
 
-# add update check into run-cmd.sh
-sed -i '56i $(curl -sS -u guest:guest "http://'$RabbitMQMgtPort_Required_by_Worker'/api/consumers" | jq --raw-output .[].channel_details.peer_host > hostfile.txt)'
-
 # nfs ip (remove port)
 NFS_IP=$PUBLIC_NFSServer_Required_by_Worker
 NFS_IP=${NFS_IP%%:*}
@@ -31,6 +28,9 @@ mkdir /opt/shared
 chown -R 777 /opt/shared
 rpcbind
 mount -t nfs4 "$NFS_IP":/opt/shared /opt/shared
+
+# add update check into run-cmd.sh
+sed -i '56i $(curl -sS -u guest:guest "http://'$RabbitMQMgtPort_Required_by_Worker'/api/consumers" | jq --raw-output .[].channel_details.peer_host > /opt/shared/MD_v4_MPI/hostfile.txt)'
 
 # ssh configuration
 echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config  
