@@ -29,10 +29,10 @@ echo "NFS host: $NFS_IP"
 echo "Master host: $MASTER_IP"
 
 # nfs mount point
-mkdir /opt/shared
-chown -R 777 /opt/shared
+mkdir /MD_v4_MPI
+chown -R 777 /MD_v4_MPI
 rpcbind
-mount -t nfs4 "$NFS_IP":/opt/shared /opt/shared
+mount -t nfs4 "$NFS_IP":/MD_v4_MPI /MD_v4_MPI
 
 # add update check into run-cmd.sh
 sed -i '56i \    $(curl -sS -u guest:guest "http://'$PUBLIC_RabbitMQMgtPort_Required_by_Worker'/api/consumers" | jq --raw-output .[].channel_details.peer_host > /opt/shared/MD_v4_MPI/hostfile.txt)' /opt/shared/MD_v4_MPI/run-cmd.sh
