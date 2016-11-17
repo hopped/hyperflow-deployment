@@ -27,7 +27,7 @@ echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config
 echo "    UserKnownHostsFile /dev/null" | sudo tee -a /etc/ssh/ssh_config
 
 ## copy into shared folder
-cp -r $HOME/.ssh /opt/shared
+cp -r $HOME/.ssh /MD_v4_MPI
 
 service ssh restart
 
