@@ -2,9 +2,9 @@
 echo "START:configure.sh"
 
 # configure nfs server
-mkdir /opt/shared
-chmod -R 777 /opt/shared
-echo "/opt/shared *(rw,sync,no_root_squash,fsid=1,no_subtree_check)" >> /etc/exports
+mkdir /MD_v4_MPI
+chmod -R 777 /MD_v4_MPI
+echo "/MD_v4_MPI *(rw,sync,no_root_squash,fsid=1,no_subtree_check)" >> /etc/exports
 exportfs -a
 
 # source
