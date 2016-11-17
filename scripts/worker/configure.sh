@@ -36,7 +36,7 @@ mount -t nfs4 "$NFS_IP":/opt/shared /opt/shared
 
 # add update check into run-cmd.sh
 sed -i '56i \    $(curl -sS -u guest:guest "http://'$PUBLIC_RabbitMQMgtPort_Required_by_Worker'/api/consumers" | jq --raw-output .[].channel_details.peer_host > /opt/shared/MD_v4_MPI/hostfile.txt)' /opt/shared/MD_v4_MPI/run-cmd.sh
-sed -i '57i \    $(sed -i "/54.170.103.239/d" /opt/shared/MD_v4_MPI/hostfile.txt)' /opt/shared/MD_v4_MPI/run-cmd.sh
+sed -i '57i \    $(sed -i "/'$MASTER_IP'/d" /opt/shared/MD_v4_MPI/hostfile.txt)' /opt/shared/MD_v4_MPI/run-cmd.sh
 
 # ssh configuration
 echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config  
