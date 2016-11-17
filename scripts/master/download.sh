@@ -7,7 +7,7 @@ cd $HOME
 wget https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-x64.tar.xz
 
 ### hyperflow-ui
-wget https://github.com/hopped/hyperflow-ui/releases/download/0.4/hyperflow-ui.tar.gz
+wget https://github.com/hopped/hyperflow-ui/releases/download/0.5/hyperflow-ui.tar.gz
 
 ### influxdb
 curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
