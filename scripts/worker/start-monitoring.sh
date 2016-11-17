@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # get visor information
-VISOR_HOST=$(ip route show | awk '/default/ {print $3}')
+#VISOR_HOST=$(ip route show | awk '/default/ {print $3}')
+VISOR_HOST=localhost
 
 ### LOCATE PORT OF TELNET SERVER
 #PORTS=( $(curl -s $VISOR_HOST:31415/monitors | jq '.[] | select(.port != null) | .port') )
