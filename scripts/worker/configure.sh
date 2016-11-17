@@ -25,8 +25,8 @@ NFS_IP=${NFS_IP%%:*}
 MASTER_IP=$PUBLIC_Master_Required_by_Worker
 MASTER_IP=${MASTER_IP%%:*}
 
-echo "NFS host: " $NFS_IP
-echo "Master host: " $MASTER_IP
+echo "NFS host: $NFS_IP"
+echo "Master host: $MASTER_IP"
 
 # nfs mount point
 mkdir /opt/shared
