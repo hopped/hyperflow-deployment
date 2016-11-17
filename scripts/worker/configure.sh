@@ -46,4 +46,7 @@ chown ubuntu:ubuntu -R $HOME/.ssh
 
 service ssh restart
 
+# reset user permissions
+chown ubuntu:ubuntu -R $HOME
+
 echo "END:configure.sh"
