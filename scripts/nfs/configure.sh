@@ -14,7 +14,9 @@ exportfs -a
 rpcbind
 
 ### md simulation
-cd ../../binaries && tar -C /opt/shared/ -xf md_v4_mpi_trusty.tar.gz
+cd ../../binaries && tar -C /MD_v4_MPI -xf md_v4_mpi_trusty.tar.gz
+mv /MD_v4_MPI/* .
+rm -rf /MD_v4_MPI/MD_v4_MPI
 
 ## ssh
 ssh-keygen -t rsa -f $HOME/.ssh/id_rsa -N ''
