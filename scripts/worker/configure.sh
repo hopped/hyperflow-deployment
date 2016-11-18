@@ -43,6 +43,8 @@ echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config
 echo "    UserKnownHostsFile /dev/null" | sudo tee -a /etc/ssh/ssh_config
 cp /MD_v4_MPI/.ssh/* $HOME/.ssh
 chown ubuntu:ubuntu -R $HOME/.ssh
+chown ubuntu:ubuntu -R /tmp
+chown -R 777 /tmp
 
 service ssh restart
 
