@@ -35,7 +35,7 @@ rpcbind
 mount -t nfs4 "$NFS_IP":/MD_v4_MPI /MD_v4_MPI
 
 # add update check into run-cmd.sh
-sed -i '70i \    $(curl -sS -u guest:guest "http://'$PUBLIC_RabbitMQMgtPort_Required_by_Worker'/api/consumers" | jq --raw-output .[].channel_details.peer_host | uniq > /MD_v4_MPI/hostfile.txt)' /MD_v4_MPI/run-cmd.sh
+sed -i '70i \    $(curl -sS -u guest:guest "http://'$PUBLIC_RabbitMQMgtPort_Required_by_Worker'/api/consumers" | jq --raw-output .[].channel_details.peer_host | sort | uniq > /MD_v4_MPI/hostfile.txt)' /MD_v4_MPI/run-cmd.sh
 sed -i '71i \    $(sed -i "/'$MASTER_IP'/d" /MD_v4_MPI/hostfile.txt)' /MD_v4_MPI/run-cmd.sh
 
 # ssh configuration
