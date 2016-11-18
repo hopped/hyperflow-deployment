@@ -17,13 +17,14 @@ rpcbind
 cd ../../binaries && tar -C /MD_v4_MPI -xf md_v4_mpi_trusty.tar.gz
 mv /MD_v4_MPI/MD_v4_MPI/* /MD_v4_MPI/
 rm -rf /MD_v4_MPI/MD_v4_MPI
+chown ubuntu:ubuntu -R /MD_v4_MPI
 
 ## ssh
 ssh-keygen -t rsa -f $HOME/.ssh/id_rsa -N ''
 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 
 ## modify ssh config
-echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config  
+echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config
 echo "    UserKnownHostsFile /dev/null" | sudo tee -a /etc/ssh/ssh_config
 
 ## copy into shared folder
