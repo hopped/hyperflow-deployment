@@ -19,4 +19,6 @@ curl -XPOST http://admin:admin@localhost:3000/api/datasources -H "Content-Type: 
 chown ubuntu:ubuntu -R $HOME
 chown ubuntu:ubuntu -R /hyperflow-ui
 
+ulimit -n 65535
+
 echo "END:configure.sh"
