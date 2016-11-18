@@ -30,7 +30,7 @@ echo "Master host: $MASTER_IP"
 
 # nfs mount point
 mkdir /MD_v4_MPI
-chown -R 777 /MD_v4_MPI
+chmod -R 777 /MD_v4_MPI
 rpcbind
 mount -t nfs4 "$NFS_IP":/MD_v4_MPI /MD_v4_MPI
 
@@ -43,6 +43,8 @@ echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config
 echo "    UserKnownHostsFile /dev/null" | sudo tee -a /etc/ssh/ssh_config
 cp /MD_v4_MPI/.ssh/* $HOME/.ssh
 chown ubuntu:ubuntu -R $HOME/.ssh
+chown ubuntu:ubuntu -R /tmp
+chmod -R 777 /tmp
 
 service ssh restart
 
