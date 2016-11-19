@@ -35,11 +35,11 @@ rpcbind
 mount -t nfs4 "$NFS_IP":/MD_v4_MPI /MD_v4_MPI
 
 # add update check into run-cmd.sh
-sed -i '25i \    $(curl -sS -u guest:guest "http://'$PUBLIC_RabbitMQMgtPort_Required_by_Worker'/api/consumers" | jq --raw-output .[].channel_details.peer_host | sort | uniq > /MD_v4_MPI/hostfile.txt)' /MD_v4_MPI/run-cmd.sh
-sed -i '26i \    $(sed -i "/'$MASTER_IP'/d" /MD_v4_MPI/hostfile.txt)' /MD_v4_MPI/run-cmd.sh
+sed -i '31i \    $(curl -sS -u guest:guest "http://'$PUBLIC_RabbitMQMgtPort_Required_by_Worker'/api/consumers" | jq --raw-output .[].channel_details.peer_host | sort | uniq > $MYDIR/hostfile.txt)' /MD_v4_MPI/run-cmd.sh
+sed -i '32i \    $(sed -i "/'$MASTER_IP'/d" $MYDIR/hostfile.txt)' /MD_v4_MPI/run-cmd.sh
 
 # ssh configuration
-echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config  
+echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config
 echo "    UserKnownHostsFile /dev/null" | sudo tee -a /etc/ssh/ssh_config
 cp /MD_v4_MPI/.ssh/* $HOME/.ssh
 chown ubuntu:ubuntu -R $HOME/.ssh
