@@ -18,6 +18,7 @@ cd ../../binaries && tar -C /MD_v4_MPI -xf md_v4_mpi_trusty.tar.gz
 mv /MD_v4_MPI/MD_v4_MPI/* /MD_v4_MPI/
 rm -rf /MD_v4_MPI/MD_v4_MPI
 chown ubuntu:ubuntu -R /MD_v4_MPI
+echo localhost > /MD_v4_MPI/hostfile.txt
 
 ## ssh
 ssh-keygen -t rsa -f $HOME/.ssh/id_rsa -N ''
